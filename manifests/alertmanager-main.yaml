@@ -13,7 +13,7 @@ metadata:
     prometheus.io/path: '/alertmanager/metrics'
   labels:
     name: alertmanager
-  name: alertmanager
+  name: alertmanager-main
   namespace: monitoring
 spec:
   selector:
