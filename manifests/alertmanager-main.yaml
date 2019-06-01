@@ -69,9 +69,11 @@ spec:
             - name: config-volume
               mountPath: /etc/alertmanager
       volumes:
+        - name: config
+          emptyDir: {}
         - name: config-volume
           configMap:
-            defaultMode: 420
+            defaultMode: 0666
             name: alertmanager
       nodeSelector:
         beta.kubernetes.io/os: linux
