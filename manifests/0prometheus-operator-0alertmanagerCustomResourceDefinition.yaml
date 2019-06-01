@@ -600,19 +600,26 @@ spec:
               description: dnsConfig
               properties:
                 nameservers:
+                  description: Containers allows injecting additional containers.
                   type: array
                   items:
                     type: string
                 searches:
+                  description: Containers allows injecting additional containers.
                   type: array
                   items:
                     type: string
                 options:
+                  description: Containers allows injecting additional containers.
                   type: array
                   items:
                     properties:
-                      name: string
-                      value: string
+                      name:
+                        description: Containers allows injecting additional containers.
+                        type: string
+                      value:
+                        description: Containers allows injecting additional containers.
+                        type: string
             configMaps:
               description: ConfigMaps is a list of ConfigMaps in the same namespace
                 as the Alertmanager object, which shall be mounted into the Alertmanager
