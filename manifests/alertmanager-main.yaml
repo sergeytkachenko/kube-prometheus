@@ -61,6 +61,7 @@ spec:
           command: ['/bin/sh', '/etc/alertmanager/configure_secret.sh']
           args:
             - '-config.file=/etc/alertmanager/config.yml'
+            - '-log.level=debug'
             - '-storage.path=/alertmanager'
           ports:
             - name: web
