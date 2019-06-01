@@ -115,7 +115,7 @@ data:
     - name: 'slack'
       slack_configs:
       - channel: '#alerts'
-        text: '{{ .GroupLabels.app }}/{{ .GroupLabels.alertname }}'
+        text: '{{ .GroupLabels.app }} {{ .GroupLabels.alertname }}'
     route:
       group_by:
       - job
