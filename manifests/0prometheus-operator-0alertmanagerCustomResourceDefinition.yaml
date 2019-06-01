@@ -593,6 +593,26 @@ spec:
             baseImage:
               description: Base image that is used to deploy pods, without tag.
               type: string
+            dnsPolicy:
+              description: dnsPolicy
+              type: string
+            dnsConfig:
+              description: dnsConfig
+              properties:
+                nameservers:
+                  type: array
+                  items:
+                    type: string
+                searches:
+                  type: array
+                  items:
+                    type: string
+                options:
+                  type: array
+                  items:
+                    properties:
+                      name: string
+                      value: string
             configMaps:
               description: ConfigMaps is a list of ConfigMaps in the same namespace
                 as the Alertmanager object, which shall be mounted into the Alertmanager
