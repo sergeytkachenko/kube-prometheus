@@ -2,3 +2,5 @@ tmp/
 minikube-manifests/
 vendor/
 ./auth
+.idea
+.github
