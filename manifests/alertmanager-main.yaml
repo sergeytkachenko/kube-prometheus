@@ -102,6 +102,7 @@ data:
   config.yml: |-
     global:
       resolve_timeout: 5m
+      slack_api_url: 'https://hooks.slack.com/services/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'
     receivers:
     - name: email-me
       email_configs:
@@ -111,17 +112,21 @@ data:
         auth_username: bombascter@gmail.com
         auth_identity: bombascter@gmail.com
         auth_password: sgqorxbvnoxwupdg
+    - name: 'slack'
+      slack_configs:
+      - channel: '#alerts'
+        text: '{{ .GroupLabels.app }}/{{ .GroupLabels.alertname }}'
     route:
       group_by:
       - job
       group_interval: 5m
       group_wait: 30s
-      receiver: email-me
+      receiver: slack
       repeat_interval: 12h
       routes:
       - match:
           alertname: Watchdog
-        receiver: email-me
+        receiver: slack
   configure_secret.sh: |-
     echo 'Configuring Slack hook url.'
     sed -i -e s,API_URL_SECRET,"$SLACK_HOOK_URL",g /etc/alertmanager/config.yml
