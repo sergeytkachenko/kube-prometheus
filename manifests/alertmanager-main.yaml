@@ -68,6 +68,7 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: /etc/alertmanager
+              readOnly: false
       volumes:
         - name: config
           emptyDir: {}
