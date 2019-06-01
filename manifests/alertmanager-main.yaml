@@ -71,6 +71,7 @@ spec:
       volumes:
         - name: config-volume
           configMap:
+            defaultMode: 420
             name: alertmanager
       nodeSelector:
         beta.kubernetes.io/os: linux
