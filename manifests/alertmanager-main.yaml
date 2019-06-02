@@ -11,7 +11,7 @@ metadata:
   annotations:
     prometheus.io/scrape: 'true'
   labels:
-    name: alertmanager
+    name: alertmanager-main
   name: alertmanager-main
   namespace: monitoring
 spec:
