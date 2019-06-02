@@ -131,17 +131,17 @@ data:
     sed -i -e s,API_URL_SECRET,"$SLACK_HOOK_URL",g /etc/alertmanager/config.yml
     exec /bin/alertmanager $*
 ---
-apiVersion: monitoring.coreos.com/v1
-kind: ServiceMonitor
-metadata:
-  labels:
-    k8s-app: alertmanager
-  name: alertmanager
-  namespace: monitoring
-spec:
-  endpoints:
-    - interval: 30s
-      port: web
-  selector:
-    matchLabels:
-      app: alertmanager-main
+#apiVersion: monitoring.coreos.com/v1
+#kind: ServiceMonitor
+#metadata:
+#  labels:
+#    k8s-app: alertmanager
+#  name: alertmanager
+#  namespace: monitoring
+#spec:
+#  endpoints:
+#    - interval: 30s
+#      port: web
+#  selector:
+#    matchLabels:
+#      app: alertmanager-main
